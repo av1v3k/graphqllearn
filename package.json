@@ -1,0 +1,27 @@
+{
+  "name": "GraphQL",
+  "version": "1.0.0",
+  "description": "https://github.com/StephenGrider/GraphQLCasts",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/av1v3k/graphqllearn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/av1v3k/graphqllearn/issues"
+  },
+  "homepage": "https://github.com/av1v3k/graphqllearn#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.6.0",
+    "lodash": "^4.17.21",
+    "nodemon": "^2.0.19"
+  }
+}
