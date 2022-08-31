@@ -1,12 +1,23 @@
 version: "3"
 services:
-  grapqlexpressservice:
+  # grapqlexpressservice:
+  #   build:
+  #     dockerfile: "nodeserver.Dockerfile"
+  #   #image: ngauth_frontend
+  #   container_name: grapqlexpress_container
+  #   ports: 
+  #     - "3500:3500"
+  #   volumes:
+  #     - "/graphql/node_modules"
+  #     - ".:/graphql"
+
+  jsonserverservice:
     build:
-      dockerfile: "Dockerfile"
+      dockerfile: "jsonserver.Dockerfile"
     #image: ngauth_frontend
-    container_name: grapqlexpress_container
+    #container_name: jsonserver_container
     ports: 
-      - "3500:3500"
+      - "3000:3000"
     volumes:
-      - "/graphql/node_modules"
-      - ".:/graphql"
+      - "/db/node_modules"
+      - ".:/db"

@@ -5,7 +5,7 @@ const { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLSchema } = graphql;
 
 const users = [
     { id: '23', firstName: 'Bill', age: 20 },
-    { id: '23', firstName: 'Samantha', age: 23 }
+    { id: '24', firstName: 'Samantha', age: 23 }
 
 ]
 

@@ -49,3 +49,12 @@ Refer UserType object for Schema creation.
 8. Export the Root Query, defining the schema.
 
 9. 
+
+
+=================
+
+Issues Faced:
+
+json-server issues,
+
+without --host 0.0.0.0 in package.json "script" section, the server was not running.
