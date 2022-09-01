@@ -1,0 +1,24 @@
+{
+    "users": [
+        {
+            "id": "23",
+            "firstName": "Surya",
+            "age": 20
+        },
+        {
+            "id": "24",
+            "firstName": "Vikram",
+            "age": 23
+        },
+        {
+            "id": "106",
+            "firstName": "Karmuhilan",
+            "age": 6
+        },
+        {
+            "id": "105",
+            "firstName": "Amirthavarshini",
+            "age": 6
+        }
+    ]
+}
