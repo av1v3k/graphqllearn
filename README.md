@@ -48,7 +48,10 @@ Refer UserType object for Schema creation.
 
 8. Export the Root Query, defining the schema.
 
-9. 
+JSON-SERVER:
+
+1. to mock up Outside API request, use json-server npm. (This is nothing but to nimick Asynchronous API request.)
+
 
 
 =================
@@ -58,3 +61,7 @@ Issues Faced:
 json-server issues,
 
 without --host 0.0.0.0 in package.json "script" section, the server was not running.
+
+And also, when invoking used "npx",
+
+npx json-server
