@@ -83,7 +83,7 @@ Example:
 ```
 
  - And also, inorder to create a query fragment follow the below syntax,
-
+```
  fragment companyDetails on Company {
     id
     name
@@ -93,6 +93,67 @@ Example:
         age
     }
  }
+```
+
+The complete code as below,
+
+```
+{
+  apple: company(id: "1") {
+		...companyDetails
+  }
+  google: company(id: "2") {
+		...companyDetails
+  }
+}
+
+fragment companyDetails on Company {
+  id
+  name
+  description
+  users {
+    firstName
+    age
+  }
+}
+```
+
+3. Mutation:
+
+a. Create root mutation same as root query.
+
+```
+const mutation = new GraphQLObjectType({
+    name: 'Mutation',
+    fields: {
+        addUser: {
+            type: UserType,
+            args: {
+                firstName: { type: new GraphQLNonNull(GraphQLString) },
+                age: { type: new GraphQLNonNull(GraphQLInt) },
+                companyId: { type: GraphQLString },
+            },
+            resolve(parentValue, { firstName, age }) {
+                return axios.post(`http://jsonserver_container:3000/users`, { firstName, age })
+                    .then(resp => resp.data)
+            }
+        }
+    }
+})
+```
+
+
+In iGraphQL:
+-----------
+```
+mutation {
+  addUser(firstName: "Passion", age: 35) {
+    firstName
+    id
+    age
+  }
+}
+```
 
 
 
