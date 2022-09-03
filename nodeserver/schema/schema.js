@@ -24,12 +24,12 @@ const UserType = new GraphQLObjectType({
         id: { type: GraphQLString },
         firstName: { type: GraphQLString },
         age: { type: GraphQLInt },
-        // company: {
-        //     type: CompanyType,
-        //     resolve(parentValue, args) {
-        //         console.log(parentvalue, args);
-        //     }
-        // }
+        company: {
+            type: CompanyType,
+            resolve(parentValue, args) {
+                return axios.get(`http://jsonserver_container:3000/companies/${parentValue.companyId}`).then(resp => resp.data);
+            }
+        }
     }
 });
 
