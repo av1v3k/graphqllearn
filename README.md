@@ -69,7 +69,7 @@ npx json-server
 
 
 Docker Communication:
-
+=====================
 
 Communicating from 1 container to another container by creating a network or connecting to the default network.
 
