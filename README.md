@@ -65,3 +65,27 @@ without --host 0.0.0.0 in package.json "script" section, the server was not runn
 And also, when invoking used "npx",
 
 npx json-server
+
+
+
+Docker Communication:
+=====================
+
+Communicating from 1 container to another container by creating a network or connecting to the default network.
+
+1. With the network created by default (root foldername_default), run the below command. 
+
+    docker network connect <network-name> <container-name>
+
+2. Listing the network available in host m/c
+
+    docker network ls
+
+3. Inspecting the docker network.
+
+    docker network inspect <network-name>
+
+4. Under Containers: {} section, now we see the 2 containers added.
+
+5. Instead of using localhost:<port> for communicating, use <container_name>:<port_no> inside the container file.
+
