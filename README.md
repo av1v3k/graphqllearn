@@ -52,6 +52,52 @@ JSON-SERVER:
 
 1. to mock up Outside API request, use json-server npm. (This is nothing but to nimick Asynchronous API request.)
 
+What I learned:
+
+1. Circular reference:
+
+To avoid circular reference of the defined types, convert field key to arrow function.
+
+Example:
+```
+    fields: () => ({
+        id: { type: GraphQLString },
+        firstName: { type: GraphQLString },
+        ...
+    })
+```
+
+2. Query Fragments:
+
+- The response or the output shown in iGraphQL has only 1 key. But, how can I execute 2 or more queries ?
+
+This can be achieved with lablelling the key with new name for it.
+
+Example: 
+
+```
+  apple: company(id: "1") {
+		    name
+            description
+  }
+```
+
+ - And also, inorder to create a query fragment follow the below syntax,
+
+ fragment companyDetails on Company {
+    id
+    name
+    description
+    users {
+        firstName
+        age
+    }
+ }
+
+
+
+
+
 
 
 =================
