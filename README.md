@@ -120,7 +120,7 @@ fragment companyDetails on Company {
 
 3. Mutation:
 
-a. Create root mutation same as root query.
+a. Mutation for adding - Create root mutation same as root query. 
 
 ```
 const mutation = new GraphQLObjectType({
@@ -140,6 +140,39 @@ const mutation = new GraphQLObjectType({
         }
     }
 })
+```
+
+b. Mutation for Delete
+
+Same as above.
+
+```
+    deleteUser: {
+        type: UserType,
+        args: {
+            id: { type: new GraphQLNonNull(GraphQLString) }
+        },
+        resolve(parentValue, args) {
+            return axios.delete(`http://jsonserver_container:3000/users/${args.id}`).then(resp => resp.data);
+        }
+    }
+```
+
+c. Mutation for Edit/Patch
+
+```
+    editUser: {
+        type: UserType,
+        args: {
+            id: { type: new GraphQLNonNull(GraphQLString) },
+            firstName: { type: GraphQLString },
+            age: { type: GraphQLInt },
+            companyId: { type: GraphQLString },
+        },
+        resolve(parentValue, args) {
+            return axios.patch(`http://jsonserver_container:3000/users/${args.id}`, args).then(resp => resp.data);
+        }
+    }
 ```
 
 
